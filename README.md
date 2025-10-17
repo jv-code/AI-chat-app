@@ -16,7 +16,5 @@ A lightweight, modern AI chat application built with React, Vite, and TailwindCS
    ```bash
    npm install
 
-   <img width="1540" height="830" alt="image" src="https://github.com/user-attachments/assets/891fca08-08fd-4ed7-a357-8ce7e1005b4b" />
-
-   <img width="1218" height="808" alt="image" src="https://github.com/user-attachments/assets/d5b6118a-f4cd-4c1e-bec7-c4f37c1d3fd7" />
-
+   <img width="1540" height="830" alt="chatapp" src="https://github.com/user-attachments/assets/4cfbc0c1-338e-418d-8410-b4ee374bbbd3" />
+<img width="1218" height="808" alt="chtapp2" src="https://github.com/user-attachments/assets/0fbc9515-67b0-4c5b-8180-400cb74e6d7e" />
