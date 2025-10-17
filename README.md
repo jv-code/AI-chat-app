@@ -4,12 +4,12 @@ A lightweight, modern AI chat application built with React, Vite, and TailwindCS
 
 ## Features
 
-- 🎨 Beautiful, modern UI with TailwindCSS
-- 💬 Real-time AI responses from OpenAI
-- ⚡ Fast development with Vite
-- 🎯 Loading states and error handling
-- 🔒 Secure API key management
-
+- Clean and modern UI with TailwindCSS
+- Real-time AI responses from OpenAI
+- Fast development with Vite
+- Loading states and error handling
+- Secure API key management
+  
 ## Setup
 
 1. Install dependencies:
