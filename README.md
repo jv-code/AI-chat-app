@@ -29,4 +29,4 @@ A lightweight, modern AI chat application built with React, Vite, and TailwindCS
 ## Setup
 1. Install dependencies:
  ```bash
-   npm install
+   npm install<img width="1002" height="2088" alt="Screenshot 2025-10-18 152348-imageonline co-merged" src="https://github.com/user-attachments/assets/38ae35e5-5438-4dbf-aa9f-157bb4b5669e" />
