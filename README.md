@@ -2,6 +2,8 @@
 
 A lightweight, modern AI chat application built with React, Vite, and TailwindCSS.
 
+![image alt](https://github.com/jv-code/AI-chat-app/blob/main/Screenshot%202025-10-18%20152348-imageonline.co-merged.png?raw=true)
+
 ## Features
 
 - Clean and modern UI with TailwindCSS
@@ -31,4 +33,4 @@ A lightweight, modern AI chat application built with React, Vite, and TailwindCS
  ```bash
    npm install
 
-![image alt](https://github.com/jv-code/AI-chat-app/blob/main/Screenshot%202025-10-18%20152348-imageonline.co-merged.png?raw=true)
+
