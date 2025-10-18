@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Send, Loader2, Sparkles, AlertCircle } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { Send, Loader2, Sparkles, AlertCircle, Trash2 } from 'lucide-react'
 import OpenAI from 'openai'
 
 function App() {
@@ -7,6 +7,31 @@ function App() {
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const messagesEndRef = useRef(null)
+
+  // Load chat history from localStorage on mount
+  useEffect(() => {
+    const savedMessages = localStorage.getItem('chatHistory')
+    if (savedMessages) {
+      try {
+        setMessages(JSON.parse(savedMessages))
+      } catch (err) {
+        console.error('Failed to load chat history:', err)
+      }
+    }
+  }, [])
+
+  // Save chat history to localStorage whenever messages change
+  useEffect(() => {
+    if (messages.length > 0) {
+      localStorage.setItem('chatHistory', JSON.stringify(messages))
+    }
+  }, [messages])
+
+  // Auto-scroll to bottom when new messages arrive
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [messages, loading])
 
   const openai = new OpenAI({
     apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -58,6 +83,13 @@ function App() {
     }
   }
 
+  const clearHistory = () => {
+    if (window.confirm('Are you sure you want to clear all chat history?')) {
+      setMessages([])
+      localStorage.removeItem('chatHistory')
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -70,6 +102,15 @@ function App() {
             </h1>
           </div>
           <p className="text-gray-600">Ask me anything and get instant AI-powered responses</p>
+          {messages.length > 0 && (
+            <button
+              onClick={clearHistory}
+              className="mt-3 inline-flex items-center gap-2 px-4 py-2 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors"
+            >
+              <Trash2 className="w-4 h-4" />
+              Clear History
+            </button>
+          )}
         </div>
 
         {/* Chat Messages */}
@@ -111,6 +152,7 @@ function App() {
                   </div>
                 </div>
               )}
+              <div ref={messagesEndRef} />
             </div>
           )}
         </div>
