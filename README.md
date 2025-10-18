@@ -9,6 +9,8 @@ A lightweight, modern AI chat application built with React, Vite, and TailwindCS
 - Fast development with Vite
 - Loading states and error handling
 - Secure API key management
+- **Chat history persistence** - Conversations are saved locally and restored on reload
+- Clear history button to start fresh conversations
 
 ## Setup
 
